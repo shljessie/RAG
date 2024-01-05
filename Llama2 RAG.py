@@ -79,10 +79,15 @@ index = VectorStoreIndex.from_documents(documents)
 query_engine = index.as_query_engine()
 
 # Terminal interaction loop
+# Print welcome message and instructions
+print("Welcome to the Joe Biden RAG Chat!")
+print("Type your prompt and press Enter to continue. Type 'exit' to end the chat.")
+
 while True:
-    prompt = input("Enter your prompt: ")
-    if prompt:
-        response = query_engine.query(prompt)
-        print(response.response)
-    else:
+    prompt = input("\nYour question: ")
+    if prompt.lower() == 'exit':
+        print("Exiting chat. Goodbye!")
         break
+    elif prompt:
+        response = query_engine.query(prompt)
+        print("\nResponse:\n" + response.response)
