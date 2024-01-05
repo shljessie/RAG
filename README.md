@@ -11,7 +11,7 @@ Stanford
 
 ** This code can only be run locally. Please refer to the youtube video below to see it working with the provided problems 
 
-Youtube Video : 
+Youtube Video : https://youtu.be/v8zbJo199tI
 
 ### Prerequisites
 To run this script, you need the following:
