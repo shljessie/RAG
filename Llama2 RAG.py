@@ -1,4 +1,3 @@
-import streamlit as st
 import torch
 from glob import glob
 from pathlib import Path
@@ -80,9 +79,11 @@ documents = load_documents("./documents/")
 index = VectorStoreIndex.from_documents(documents)
 query_engine = index.as_query_engine()
 
-st.title("Llama2 RAG")
-
-prompt = st.text_input("Enter your prompt")
-if prompt:
-    response = query_engine.query(prompt)
-    st.write(response.response)
+# Terminal interaction loop
+while True:
+    prompt = input("Enter your prompt: ")
+    if prompt:
+        response = query_engine.query(prompt)
+        print(response.response)
+    else:
+        break
