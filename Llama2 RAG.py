@@ -58,7 +58,7 @@ def load_documents(directory):
     return documents
 
 
-tokenizer, model, embedding_llm = model_tokenizer_embedder(model_id, auth_token)
+tokenizer, model, embedding_llm = model_tokenizer_embedder(model_id, HF_ACCESS_TOKEN)
 
 query_wrapper_prompt = SimpleInputPrompt("{query_str} [/INST]")
 
