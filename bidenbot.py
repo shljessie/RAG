@@ -60,7 +60,6 @@ def load_documents(directory):
 
 
 tokenizer, model, embedding_llm = model_tokenizer_embedder(model_id, HF_ACCESS_TOKEN)
-
 query_wrapper_prompt = SimpleInputPrompt("{query_str} [/INST]")
 
 llm = HuggingFaceLLM(
@@ -81,8 +80,8 @@ documents = load_documents("./documents/")
 index = VectorStoreIndex.from_documents(documents)
 query_engine = index.as_query_engine()
 
+
 # Terminal interaction loop
-# Print welcome message and instructions
 print("Welcome to the Joe Biden RAG Chat!")
 print("Type your prompt and press Enter to continue. Type 'exit' to end the chat.")
 
