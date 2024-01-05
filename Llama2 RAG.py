@@ -1,3 +1,11 @@
+import os
+from langchain.embeddings import HuggingFaceEmbeddings
+from llama_index.embeddings import LangchainEmbedding
+from transformers import AutoTokenizer, AutoModelForCausalLM
+from llama_index.llms import HuggingFaceLLM
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
 import torch
 from glob import glob
 from pathlib import Path
@@ -8,11 +16,6 @@ from llama_index import (
     VectorStoreIndex,
     download_loader,
 )
-import os
-from langchain.embeddings import HuggingFaceEmbeddings
-from llama_index.embeddings import LangchainEmbedding
-from transformers import AutoTokenizer, AutoModelForCausalLM
-from llama_index.llms import HuggingFaceLLM
 
 PyMuPDFReader = download_loader("PyMuPDFReader")
 loader = PyMuPDFReader()
