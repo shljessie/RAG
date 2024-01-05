@@ -29,7 +29,6 @@ If you don't know the answer to a question, please don't share false information
 
 HF_ACCESS_TOKEN = os.getenv('HF_ACCESS_TOKEN')
 
-@st.cache_resource
 def model_tokenizer_embedder(model_id, auth_token):
     tokenizer = AutoTokenizer.from_pretrained(
         model_id, cache_dir="./model/", use_auth_token=HF_ACCESS_TOKEN
